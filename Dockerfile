@@ -55,6 +55,10 @@ RUN wget -c ${PRODUCT_DOWNLOAD_URL} && \
 #### Install Product Plugins ####
 #################################
 # ... add Product plugin - installation here (see example in https://github.com/DrSnowbird/papyrus-sysml-docker)
+##
+## -- Overcome error: Error initializing QuantumRenderer: no suitable pipeline found
+##
+RUN sudo apt-get install -y libswt-gtk-3-java mesa-utils libgl1-mesa-glx
 
 ##################################
 #### Set up user environments ####

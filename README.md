@@ -1,23 +1,20 @@
 # netbeans9-docker
 [![](https://images.microbadger.com/badges/image/openkbs/netbeans9-docker.svg)](https://microbadger.com/images/openkbs/netbeans9-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/netbeans9-docker.svg)](https://microbadger.com/images/openkbs/netbeans9-docker "Get your own version badge on microbadger.com")
 
-* Eclipse-Photon + Java 8 JDK + Maven 3.5 + Python 3.5 + X11 (display GUI)
-
-# NOTE: This docker default is providing latest Eclipse Photon instead of Oxygen and you can change it to build other versions!!!
+* Eclipse-Photon + Java 8 JDK + Maven 3.5 + Python 3.5 + Gradle 4.9 + X11 (display GUI)
 
 # License Agreement
 By using this image, you agree the [Oracle Java JDK License](http://www.oracle.com/technetwork/java/javase/terms/license/index.html).
 This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html). You must accept the [Oracle Binary Code License Agreement for Java SE](http://www.oracle.com/technetwork/java/javase/terms/license/index.html) to use this image.
 
 # Components
-* Eclipse Phonto JEE version (you can change if by change Dockerfile)
-* java version "1.8.0_181"
-  Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
-  Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
+* java version "1.8.0_191"
+  Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
+  Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 * Apache Maven 3.5.3
 * Python 3.5.2
-* X11 display desktop
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
+* X11 display desktop
 
 # Run (recommended for easy-start)
 Image is pulling from openkbs/netbeans9-docker
@@ -31,22 +28,6 @@ Note that the default build docker is "photon" version.
 If you want to build older Eclipse like "oxygen", you can following instruction in next section
 ```
 ./build.sh
-```
-
-## Build (Older Eclipse, e.g. Oxygen)
-* Way-1: Modify the line in Dockefile as below if you use Docker-compose or Openshift CI/CD. That is, you se this way if you are not using command line ./build.sh to build container image.
-```
-## -- Eclipse version: photon, oxygen, etc.: -- ##
-ENV ECLIPSE_VERSION=${ECLIPSE_VERSION:-photon}
-or
-ENV ECLIPSE_VERSION=${ECLIPSE_VERSION:-oxygen}
-```
-* Way-2: If you use command line "./build.sh", you can modify ".env (old filename docker.env)" file and then, run "./build.sh" to build image
-```
-## -- Eclipse version: photon, oxygen, photon, etc.: -- ##
-ECLIPSE_VERSION=photon
-or
-ECLIPSE_VERSION=oxygen
 ```
 
 # Configurations (Optional)
