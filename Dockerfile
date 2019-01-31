@@ -14,12 +14,12 @@ ENV PRODUCT_WORKSPACE=${HOME}/workspace
 ## --------------------------------------------------
 
 ## -- 0.) Product Download Mirror site: -- ##
-## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans-java/incubating-9.0/incubating-netbeans-java-9.0-bin.zip
-## http://www-us.apache.org/dist/incubator/netbeans/incubating-netbeans-java/incubating-9.0/incubating-netbeans-java-9.0-bin.zip
+## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans-java/incubating-10.0/incubating-netbeans-java-10.0-bin.zip
+## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans/incubating-10.0/incubating-netbeans-10.0-bin.zip
 ARG PRODUCT_MIRROR_SITE_URL=${PRODUCT_MIRROR_SITE_URL:-http://www-us.apache.org/dist}
 
 ## -- 1.) Product version: -- ##
-ARG PRODUCT_VERSION=${PRODUCT_VERSION:-9.0}
+ARG PRODUCT_VERSION=${PRODUCT_VERSION:-10.0}
 ENV PRODUCT_VERSION=${PRODUCT_VERSION}
 
 ## -- 2.) Product Category: -- ##
@@ -29,7 +29,7 @@ ARG PRODUCT_CATEGORY=${PRODUCT_CATEGORY:-"incubator"}
 ARG PRODUCT_NAME=${PRODUCT_NAME:-"netbeans"}
 
 ## -- 4.) Product Build: -- ##
-ARG PRODUCT_BUILD=${PRODUCT_BUILD:-"incubating-netbeans-java"}
+ARG PRODUCT_BUILD=${PRODUCT_BUILD:-"incubating-netbeans"}
 
 ## -- 5.) Product RELEASE: -- ##
 ARG PRODUCT_RELEASE=${PRODUCT_RELEASE:-"incubating-${PRODUCT_VERSION}"}
@@ -40,7 +40,7 @@ ARG PRODUCT_RELEASE=${PRODUCT_RELEASE:-"incubating-${PRODUCT_VERSION}"}
 ## ----------------------------------------------------------------------------------- ##
 ## ----------------------------------------------------------------------------------- ##
 ## -- Product TAR/GZ filename: -- ##
-#ARG PRODUCT_TAR=${PRODUCT_TAR:-incubating-netbeans-java-9.0-bin.zip}
+#ARG PRODUCT_TAR=${PRODUCT_TAR:-incubating-netbeans-10.0-bin.zip}
 ARG PRODUCT_TAR=${PRODUCT_TAR:-${PRODUCT_BUILD}-${PRODUCT_VERSION}-bin.zip}
 
 ## -- Product Download full URL: -- ##
