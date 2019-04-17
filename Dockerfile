@@ -14,12 +14,12 @@ ENV PRODUCT_WORKSPACE=${HOME}/workspace
 ## --------------------------------------------------
 
 ## -- 0.) Product Download Mirror site: -- ##
-## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans-java/incubating-10.0/incubating-netbeans-java-10.0-bin.zip
-## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans/incubating-10.0/incubating-netbeans-10.0-bin.zip
+## https://www.apache.org/dyn/closer.cgi/incubator/netbeans/incubating-netbeans/incubating-11.0/incubating-netbeans-11.0-bin.zip
+## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans/incubating-11.0/incubating-netbeans-11.0-bin.zip
 ARG PRODUCT_MIRROR_SITE_URL=${PRODUCT_MIRROR_SITE_URL:-http://www-us.apache.org/dist}
 
 ## -- 1.) Product version: -- ##
-ARG PRODUCT_VERSION=${PRODUCT_VERSION:-10.0}
+ARG PRODUCT_VERSION=${PRODUCT_VERSION:-11.0}
 ENV PRODUCT_VERSION=${PRODUCT_VERSION}
 
 ## -- 2.) Product Category: -- ##
@@ -47,7 +47,7 @@ ARG PRODUCT_TAR=${PRODUCT_TAR:-${PRODUCT_BUILD}-${PRODUCT_VERSION}-bin.zip}
 ARG PRODUCT_DOWNLOAD_URL=${PRODUCT_DOWNLOAD_URL:-${PRODUCT_MIRROR_SITE_URL}/${PRODUCT_CATEGORY}/${PRODUCT_NAME}/${PRODUCT_BUILD}/${PRODUCT_RELEASE}/${PRODUCT_TAR}}
 
 WORKDIR $HOME
-RUN wget -c ${PRODUCT_DOWNLOAD_URL} && \
+RUN wget -q -c ${PRODUCT_DOWNLOAD_URL} && \
     unzip ${PRODUCT_TAR} && \
     sudo rm ${PRODUCT_TAR} 
 

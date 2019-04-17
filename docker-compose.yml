@@ -1,11 +1,11 @@
-version: '3' 
+version: '3.3' 
 services:
   docker-eclipse-oxygen:
-    image: openkbs/netbeans9-docker
+    image: openkbs/netbeans-docker
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: netbeans9-docker
+    container_name: netbeans-docker
     environment:
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}

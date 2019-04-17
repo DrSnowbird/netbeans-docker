@@ -22,6 +22,17 @@ Image is pulling from openkbs/netbeans9-docker
 ./run.sh
 ```
 
+# Run with docker-compose
+You need to create a directory for netbeans to store configuration. 
+Note, if you don't create .netbeans directory, the starting of Netbeans will fail!
+(Hence, we recommend to use ./run.sh as above to start the container since the script does all the needed setup before startup.)
+```
+git clone https://github.com/DrSnowbird/netbeans-docker.git
+cd netbeans-docker
+mkdir .netbeans
+docker-compose up
+```
+
 # Build
 You can build your own image locally.
 Note that the default build docker is "photon" version. 
