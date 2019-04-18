@@ -1,23 +1,25 @@
-# netbeans9-docker
-[![](https://images.microbadger.com/badges/image/openkbs/netbeans9-docker.svg)](https://microbadger.com/images/openkbs/netbeans9-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/netbeans9-docker.svg)](https://microbadger.com/images/openkbs/netbeans9-docker "Get your own version badge on microbadger.com")
+# netbeans-docker
+[![](https://images.microbadger.com/badges/image/openkbs/netbeans-docker.svg)](https://microbadger.com/images/openkbs/netbeans-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/netbeans-docker.svg)](https://microbadger.com/images/openkbs/netbeans-docker "Get your own version badge on microbadger.com")
 
-* Eclipse-Photon + Java 8 JDK + Maven 3.5 + Python 3.5 + Gradle 4.9 + X11 (display GUI)
+* Netbeans 11 + Java 8 JDK + Maven 3.6 + Python 3.5 + Gradle 5.3 + X11 (display GUI)
 
 # License Agreement
 By using this image, you agree the [Oracle Java JDK License](http://www.oracle.com/technetwork/java/javase/terms/license/index.html).
 This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html). You must accept the [Oracle Binary Code License Agreement for Java SE](http://www.oracle.com/technetwork/java/javase/terms/license/index.html) to use this image.
 
 # Components
-* java version "1.8.0_191"
-  Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
-  Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
-* Apache Maven 3.5.3
-* Python 3.5.2
+* java version "1.8.0_202"
+  Java(TM) SE Runtime Environment (build 1.8.0_202-b08)
+  Java HotSpot(TM) 64-Bit Server VM (build 25.202-b08, mixed mode)
+* Apache Maven 3.6.0
+* Python 3.5.2 / Python 2.7.12 + pip 19.0.3 + Python3 virtual environments
+* Node v11.11.0 + npm 6.7.0 (from NodeSource official Node Distribution)
+* Gradle 5.3
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 * X11 display desktop
 
 # Run (recommended for easy-start)
-Image is pulling from openkbs/netbeans9-docker
+Image is pulling from openkbs/netbeans-docker
 ```
 ./run.sh
 ```
@@ -54,8 +56,11 @@ The above configuration will ensure all your projects created in the container's
 # See Also - Docker-based IDE
 * [openkbs/docker-atom-editor](https://hub.docker.com/r/openkbs/docker-atom-editor/)
 * [openkbs/eclipse-photon-docker](https://hub.docker.com/r/openkbs/eclipse-photon-docker/)
+* [openkbs/eclipse-photon-vnc-docker](https://hub.docker.com/r/openkbs/eclipse-photon-vnc-docker/)
 * [openkbs/eclipse-oxygen-docker](https://hub.docker.com/r/openkbs/eclipse-oxygen-docker/)
 * [openkbs/intellj-docker](https://hub.docker.com/r/openkbs/intellij-docker/)
+* [openkbs/intellj-vnc-docker](https://hub.docker.com/r/openkbs/intellij-vnc-docker/)
+* [openkbs/knime-vnc-docker](https://hub.docker.com/r/openkbs/knime-vnc-docker/)
 * [openkbs/netbeans9-docker](https://hub.docker.com/r/openkbs/netbeans9-docker/)
 * [openkbs/netbeans](https://hub.docker.com/r/openkbs/netbeans/)
 * [openkbs/papyrus-sysml-docker](https://hub.docker.com/r/openkbs/papyrus-sysml-docker/)
@@ -63,6 +68,7 @@ The above configuration will ensure all your projects created in the container's
 * [openkbs/scala-ide-docker](https://hub.docker.com/r/openkbs/scala-ide-docker/)
 * [openkbs/sublime-docker](https://hub.docker.com/r/openkbs/sublime-docker/)
 * [openkbs/webstorm-docker](https://hub.docker.com/r/openkbs/webstorm-docker/)
+* [openkbs/webstorm-vnc-docker](https://hub.docker.com/r/openkbs/webstorm-vnc-docker/)
 
 # See Also - Docker-based SQL GUI
 * [Sqlectron SQL GUI at openkbs/sqlectron-docker](https://hub.docker.com/r/openkbs/sqlectron-docker/)
