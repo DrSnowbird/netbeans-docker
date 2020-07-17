@@ -16,23 +16,23 @@ ENV PRODUCT_WORKSPACE=${HOME}/workspace
 ## -- 0.) Product Download Mirror site: -- ##
 ## https://www.apache.org/dyn/closer.cgi/incubator/netbeans/incubating-netbeans/incubating-11.0/incubating-netbeans-11.0-bin.zip
 ## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans/incubating-11.0/incubating-netbeans-11.0-bin.zip
-ARG PRODUCT_MIRROR_SITE_URL=${PRODUCT_MIRROR_SITE_URL:-http://www-us.apache.org/dist}
+ARG PRODUCT_MIRROR_SITE_URL=${PRODUCT_MIRROR_SITE_URL:-https://downloads.apache.org}
 
 ## -- 1.) Product version: -- ##
-ARG PRODUCT_VERSION=${PRODUCT_VERSION:-11.0}
+ARG PRODUCT_VERSION=${PRODUCT_VERSION:-12.0}
 ENV PRODUCT_VERSION=${PRODUCT_VERSION}
 
 ## -- 2.) Product Category: -- ##
-ARG PRODUCT_CATEGORY=${PRODUCT_CATEGORY:-"incubator"}
+ARG PRODUCT_CATEGORY=${PRODUCT_CATEGORY:-"netbeans"}
 
 ## -- 3.) Product Name: -- ##
 ARG PRODUCT_NAME=${PRODUCT_NAME:-"netbeans"}
 
 ## -- 4.) Product Build: -- ##
-ARG PRODUCT_BUILD=${PRODUCT_BUILD:-"incubating-netbeans"}
+ARG PRODUCT_BUILD=${PRODUCT_BUILD:-"12"}
 
 ## -- 5.) Product RELEASE: -- ##
-ARG PRODUCT_RELEASE=${PRODUCT_RELEASE:-"incubating-${PRODUCT_VERSION}"}
+ARG PRODUCT_RELEASE=
 
 ## ----------------------------------------------------------------------------------- ##
 ## ----------------------------------------------------------------------------------- ##
@@ -40,14 +40,17 @@ ARG PRODUCT_RELEASE=${PRODUCT_RELEASE:-"incubating-${PRODUCT_VERSION}"}
 ## ----------------------------------------------------------------------------------- ##
 ## ----------------------------------------------------------------------------------- ##
 ## -- Product TAR/GZ filename: -- ##
-#ARG PRODUCT_TAR=${PRODUCT_TAR:-incubating-netbeans-10.0-bin.zip}
-ARG PRODUCT_TAR=${PRODUCT_TAR:-${PRODUCT_BUILD}-${PRODUCT_VERSION}-bin.zip}
+#ARG PRODUCT_TAR=${PRODUCT_TAR:-https://www.apache.org/dyn/closer.cgi/netbeans/netbeans/12.0/netbeans-12.0-bin.zip}
+ARG PRODUCT_TAR=${PRODUCT_TAR:-${PRODUCT_NAME}-${PRODUCT_VERSION}-bin.zip}
 
 ## -- Product Download full URL: -- ##
-ARG PRODUCT_DOWNLOAD_URL=${PRODUCT_DOWNLOAD_URL:-${PRODUCT_MIRROR_SITE_URL}/${PRODUCT_CATEGORY}/${PRODUCT_NAME}/${PRODUCT_BUILD}/${PRODUCT_RELEASE}/${PRODUCT_TAR}}
+ARG PRODUCT_DOWNLOAD_URL=https://downloads.apache.org/netbeans/netbeans/12.0/netbeans-12.0-bin.zip
+#ARG PRODUCT_DOWNLOAD_URL=${PRODUCT_DOWNLOAD_URL:-${PRODUCT_MIRROR_SITE_URL}/${PRODUCT_CATEGORY}/${PRODUCT_NAME}/${PRODUCT_BUILD}/${PRODUCT_TAR}}
+
+RUN echo "URL=${PRODUCT_WORKSPACE}"
 
 WORKDIR $HOME
-RUN wget -q -c ${PRODUCT_DOWNLOAD_URL} && \
+RUN wget -q -c --no-check-certificate ${PRODUCT_DOWNLOAD_URL} && \
     unzip ${PRODUCT_TAR} && \
     sudo rm ${PRODUCT_TAR} 
 
@@ -57,8 +60,9 @@ RUN wget -q -c ${PRODUCT_DOWNLOAD_URL} && \
 # ... add Product plugin - installation here (see example in https://github.com/DrSnowbird/papyrus-sysml-docker)
 ##
 ## -- Overcome error: Error initializing QuantumRenderer: no suitable pipeline found
-##
-RUN sudo apt-get install -y libswt-gtk-3-java mesa-utils libgl1-mesa-glx
+## -- Commented out 'libswt-gtk-3-java' due to missing from official site Of Ubuntu 18
+#RUN sudo apt-get update -y && sudo apt-get install -y libswt-gtk-3-java mesa-utils libgl1-mesa-glx
+RUN sudo apt-get update -y && sudo apt-get install -y mesa-utils libgl1-mesa-glx
 
 ##################################
 #### Set up user environments ####
