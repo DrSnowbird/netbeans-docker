@@ -1,16 +1,12 @@
 # netbeans-docker
 [![](https://images.microbadger.com/badges/image/openkbs/netbeans-docker.svg)](https://microbadger.com/images/openkbs/netbeans-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/netbeans-docker.svg)](https://microbadger.com/images/openkbs/netbeans-docker "Get your own version badge on microbadger.com")
 
-* Netbeans 12 + Java 8 JDK + Maven 3.6 + Python 3.8 + Gradle 6 + X11 (display GUI)
-
-# License Agreement
-By using this image, you agree the [Oracle Java JDK License](http://www.oracle.com/technetwork/java/javase/terms/license/index.html).
-This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html). You must accept the [Oracle Binary Code License Agreement for Java SE](http://www.oracle.com/technetwork/java/javase/terms/license/index.html) to use this image.
+* Netbeans 12 + Java 8 OpenJDK + Maven 3.6 + Python 3.8 + Gradle 6 + X11 (display GUI)
 
 # Components
 * Netbeans 12:
   * [Apache NetBeans 12.0](https://netbeans.apache.org/)
-* Base Components (e.g., Maven, Java, NodeJS, etc.)
+* Base Components (e.g., Maven, Java, Python, NodeJS, etc.)
   * See [openkbs/jdk-mvn-py3](https://github.com/DrSnowbird/jdk-mvn-py3/blob/master/README.md#Components)
 * X11 display desktop
 
