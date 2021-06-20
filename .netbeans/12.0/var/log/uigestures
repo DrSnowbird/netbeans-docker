@@ -1,0 +1,72 @@
+<record>
+  <date>2021-06-20T01:00:10</date>
+  <millis>1624150810433</millis>
+  <sequence>89</sequence>
+  <level>300</level>
+  <thread>15</thread>
+  <message>CPU INFO</message>
+  <param>8</param>
+</record>
+<record>
+  <date>2021-06-20T01:00:10</date>
+  <millis>1624150810444</millis>
+  <sequence>90</sequence>
+  <level>300</level>
+  <thread>15</thread>
+  <message>SCREEN SIZE</message>
+  <param>5760</param>
+  <param>2160</param>
+  <param>2</param>
+</record>
+<record>
+  <date>2021-06-20T01:00:10</date>
+  <millis>1624150810447</millis>
+  <sequence>91</sequence>
+  <level>700</level>
+  <thread>15</thread>
+  <message>IDE_STARTUP</message>
+</record>
+<record>
+  <date>2021-06-20T01:00:11</date>
+  <millis>1624150811426</millis>
+  <sequence>113</sequence>
+  <logger>org.netbeans.ui.metrics.laf</logger>
+  <level>800</level>
+  <thread>15</thread>
+  <message>USG_LOOK_AND_FEEL</message>
+  <param>Metal</param>
+  <param>Metal</param>
+</record>
+<record>
+  <date>2021-06-20T01:00:14</date>
+  <millis>1624150814006</millis>
+  <sequence>116</sequence>
+  <level>800</level>
+  <thread>29</thread>
+  <message>MEMORY</message>
+  <key>MEMORY</key>
+  <catalog>&lt;null&gt;</catalog>
+  <param>33628712960</param>
+</record>
+<record>
+  <date>2021-06-20T01:00:15</date>
+  <millis>1624150815419</millis>
+  <sequence>117</sequence>
+  <logger>org.netbeans.ui.focus</logger>
+  <level>500</level>
+  <thread>21</thread>
+  <message>LOG_WINDOW_DEACTIVATED</message>
+  <key>LOG_WINDOW_DEACTIVATED</key>
+  <catalog>org.netbeans.core.ui.warmup.Bundle</catalog>
+</record>
+<record>
+  <date>2021-06-20T01:00:16</date>
+  <millis>1624150816928</millis>
+  <sequence>118</sequence>
+  <logger>org.netbeans.ui.focus</logger>
+  <level>500</level>
+  <thread>21</thread>
+  <message>LOG_WINDOW_DEACTIVATED</message>
+  <key>LOG_WINDOW_DEACTIVATED</key>
+  <catalog>org.netbeans.core.ui.warmup.Bundle</catalog>
+</record>

@@ -1,18 +1,27 @@
 version: '3.3' 
 services:
-  docker-eclipse-oxygen:
+  netbeans-docker:
     image: openkbs/netbeans-docker
     build:
       context: .
       dockerfile: Dockerfile
     container_name: netbeans-docker
     environment:
+      - DISPLAY=${DISPLAY:-localhost:0}
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}
-      - DISPLAY=${DISPLAY:-":0.0"}
-    env_file:
-      - ./.env
+    #env_file:
+    #  - ./.env
+    group_add:
+      - audio
+      - video
+    devices:
+      - /dev/snd:/dev/snd
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - .netbeans:/home/developer/.netbeans
-
+      - /etc/hosts:/etc/hosts 
+      - /dev/shm:/dev/shm
+      - /tmp/.X11-unix:/tmp/.X11-unix 
+      - ./.cache:/home/developer/.cache
+      - ./.netbeans:/home/developer/.netbeans
+      - ./data:/home/developer/data
+      - ./workspace:/home/developer/workspace

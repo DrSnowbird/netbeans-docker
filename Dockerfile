@@ -14,8 +14,7 @@ ENV PRODUCT_WORKSPACE=${HOME}/workspace
 ## --------------------------------------------------
 
 ## -- 0.) Product Download Mirror site: -- ##
-## https://www.apache.org/dyn/closer.cgi/incubator/netbeans/incubating-netbeans/incubating-11.0/incubating-netbeans-11.0-bin.zip
-## http://mirror.cc.columbia.edu/pub/software/apache/incubator/netbeans/incubating-netbeans/incubating-11.0/incubating-netbeans-11.0-bin.zip
+## https://www.apache.org/dyn/closer.cgi/netbeans/netbeans/12.0/netbeans-12.0-bin.zip
 ARG PRODUCT_MIRROR_SITE_URL=${PRODUCT_MIRROR_SITE_URL:-https://downloads.apache.org}
 
 ## -- 1.) Product version: -- ##
